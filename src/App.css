@@ -1,0 +1,226 @@
+/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #141414;
+}
+
+/* Main content - add top padding to account for fixed navigation */
+.main-content {
+  padding-top: 68px; /* Height of navigation */
+  min-height: 100vh;
+  background-color: #141414;
+}
+
+.content-section {
+  padding: 60px 4% 40px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.content-section h1 {
+  font-size: 3.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.content-section p {
+  font-size: 1.4rem;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  max-width: 640px;
+}
+
+/* Movies section styles */
+.movies-section {
+  padding: 2rem 4%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.movies-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0 1rem 0;
+  margin-bottom: 3rem;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+.movies-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movies-grid::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.movies-grid::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.movies-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Loading and Error states */
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #e50914;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p,
+.error-container p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.error-container h2 {
+  color: #e50914;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .movies-grid {
+    gap: 0.8rem;
+    padding: 0.5rem 0 1rem 0;
+  }
+  
+  .movies-section {
+    padding: 1.5rem 2%;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Demo content for scrolling */
+.demo-content {
+  padding: 40px 4%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.demo-content h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.demo-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-section h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.demo-section p {
+  font-size: 1rem;
+  color: #b3b3b3;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 56px; /* Smaller nav height on mobile */
+  }
+  
+  .content-section {
+    padding: 40px 20px 30px;
+  }
+  
+  .content-section h1 {
+    font-size: 2rem;
+  }
+  
+  .content-section p {
+    font-size: 1.1rem;
+  }
+  
+  .demo-content {
+    padding: 30px 20px;
+  }
+  
+  .demo-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}

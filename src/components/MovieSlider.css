@@ -1,0 +1,103 @@
+.movie-slider-section {
+  padding: 2rem 4%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.movies-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0 1rem 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  flex: 1;
+}
+
+.movies-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.slider-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-button-left {
+  left: -25px;
+}
+
+.slider-button-right {
+  right: -25px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .movie-slider-section {
+    padding: 1.5rem 2%;
+  }
+  
+  .slider-title {
+    font-size: 1.5rem;
+  }
+  
+  .movies-slider {
+    gap: 0.8rem;
+  }
+  
+  .slider-button {
+    display: none; /* Hide buttons on mobile, use touch scroll */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-slider-section {
+    padding: 1rem;
+  }
+  
+  .slider-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .movies-slider {
+    gap: 0.6rem;
+    padding: 0.3rem 0 0.8rem 0;
+  }
+}
